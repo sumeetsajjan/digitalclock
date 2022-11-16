@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="./images/clock.png">
+    <title>Digital Clock</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+           
+        }
+        body
+        {
+            background-color:whitesmoke;( #a0d2eb, #e5eaf5,#d0bdf4, #8458B3, #a28089);
+        }
+        .container
+        {
+            display: flex;
+            justify-content: center;
+            height: 230px;
+            width: 450px;
+            border: solid 3px rgba(222, 184, 135, 0.322) ;
+            align-items: center;
+            position: fixed;
+            padding: 100pz;
+            font-size: 50px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            background-color: black;
+            color: #caf50ae1;
+            box-shadow: 1px 0px rgb(185, 182, 182);
+            border-radius: 25px;
+            margin-left: 420px;
+          
+        }
+        h1
+        {
+            border: solid 3px rgb(248, 242, 242);
+            height: 70px;
+            width: 100%;
+            background-image: linear-gradient(to left, rgba(238, 130, 238, 0.699), rgba(76, 0, 130, 0.63), rgba(0, 0, 255, 0.603), rgba(0, 128, 0, 0.562), rgba(255, 255, 0, 0.603), rgba(255, 166, 0, 0.575), rgba(255, 0, 0, 0.644));
+            color: rgb(173, 71, 46);
+            align-items: center;
+            text-align: center;
+            font-style: normal;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            padding: 0px;
+            font-display: 4px 2px #f5b049;
+           padding-right: 50px;
+
+        }
+       
+    </style>
+    <script>
+        function digital()
+        {
+            let  dateObj=new Date()
+            let curhour=dateObj.getHours()
+            let curmin=dateObj.getMinutes()
+            let cursec=dateObj.getSeconds()
+
+            document.getElementById('hours').innerText=curhour
+            document.getElementById('minutes').innerText=curmin
+            document.getElementById('seconds').innerText=cursec
+
+            let curDay=dateObj.getDay()
+
+            switch(curDay)
+            {
+                case 5: curDay="Friday : October"
+                break;
+            }
+           document.getElementById('day').innerText= curDay
+
+           let curMonth=dateObj.getMonth()+1
+           document.getElementById('month').innerText= curMonth
+           
+           let curYear=dateObj.getFullYear()
+           document.getElementById('year').innerText= curYear
+           
+           let curdate=dateObj.getDate()
+           document.getElementById('date').innerText= curdate
+           
+
+        } 
+
+    </script>
+</head>
+<body onload="setInterval(digital,1000)">
+    <h1>Digital Clock</h1>
+    <br><br>
+    <div>
+    <div class="container">
+        <div>
+             <spam id="hours">00</spam>:
+             <spam id="minutes">00</spam>:
+            <spam id="seconds">00</spam>
+            <br>
+        <spam id="date">00</spam>:
+        <spam id="month">00</spam>:
+        <spam id="year">0000</spam>
+        <br>
+        <span id="day" ></span>
+       </div>
+
+</div>
+</div>
+</body>
+</html>
